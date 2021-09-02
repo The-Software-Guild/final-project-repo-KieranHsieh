@@ -21,21 +21,20 @@
                         <thead style="background-color: rgb(24, 28, 34);">
                             <tr>
                                 <th>Song</th>
+                                <th>Artist</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="track : ${tracks}" th:attr="onclick=|loadTrack('${track.id}')|" >
                                 <td th:text="${track.name}"></td>
+                                <td class="text-muted" th:text="${#strings.arrayJoin(track.artists, ',')}"></td>
                             </tr>
                         </tbody>
                     </table>
                     <a href="#" th:href="@{__${#httpServletRequest.requestURI}__}" class="btn btn-success">Get New Recommendations</a>
                 </div>
                 <div class="col-md-6 pr-4">
-                    <div class="row border-bottom">
-                        <h1>Listen Here</h1>
-                    </div>
-                    <div id="song_info" class="row">
+                    <div id="song_info" class="row border-top">
 
                     </div>
                 </div>

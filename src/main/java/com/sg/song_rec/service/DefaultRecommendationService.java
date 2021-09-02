@@ -23,10 +23,10 @@ public class DefaultRecommendationService implements RecommendationService {
     /*
         CONSTANT FIELDS
      */
-    private static final double ACOUSTIC_NOISE = 0.1;
+    private static final double ACOUSTIC_NOISE = 0.3;
     private static final double DANCEABILITY_NOISE = 0.1;
     private static final double ENERGY_NOISE = 0.1;
-    private static final double INSTRUMENTALNESS_NOISE = 0.1;
+    private static final double INSTRUMENTALNESS_NOISE = 0.3;
     private static final double LIVENESS_NOSIE = 0.1;
     private static final double LOUDNESS_NOSIE = 5.0;
     private static final double SPEECHINESS_NOISE = 0.05;
@@ -56,8 +56,8 @@ public class DefaultRecommendationService implements RecommendationService {
      */
     @Override
     public List<Track> getRecommendations(User user) {
-        List<Artist> topArtists = affinityDao.getTopArtists(user, 5, AffinityTimeRange.MEDIUM_TERM);
-        List<Track> topTracks = affinityDao.getTopTracks(user, 20, AffinityTimeRange.SHORT_TERM);
+        List<Artist> topArtists = affinityDao.getTopArtists(user, 5, AffinityTimeRange.LONG_TERM);
+        List<Track> topTracks = affinityDao.getTopTracks(user, 30, AffinityTimeRange.SHORT_TERM);
         List<AudioFeatures> features = audioFeaturesDao.getAudioFeaturesForTracks(user, topTracks);
         AudioFeatures averageFeatures = getAverageFeatures(features);
         return recommendationDao.getRecommendations(user, 10,

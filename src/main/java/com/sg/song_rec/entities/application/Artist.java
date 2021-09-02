@@ -60,4 +60,9 @@ public class Artist extends UniqueEntity {
     public int hashCode() {
         return Objects.hash(getName(), getGenres());
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

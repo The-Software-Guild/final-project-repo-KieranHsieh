@@ -54,8 +54,8 @@ public class RecommendationRestDao extends RestDao implements RecommendationDao 
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(ENDPOINT);
         builder.queryParam("limit", limit)
                 .queryParam("seed_artists", joinList(artists, 1)) // Take one artist
-                .queryParam("seed_tracks", joinList(tracks, 2)) // Take 2 tracks
-                .queryParam("seed_genres", joinStrList(genres, 2)); // Take 2 seed genres
+                .queryParam("seed_tracks", joinList(tracks, 3)) // Take 2 tracks
+                .queryParam("seed_genres", joinStrList(genres, 1)); // Take 1 seed genre
 
         // If the given target features is null, we don't need to set
         // the optional query parameters
