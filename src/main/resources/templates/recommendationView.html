@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Song Recommendations</title>
+    </head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <body class="text-white" style="background: url('resources/david-dvoracek-h8ElUo_473c-unsplash.jpg'); no-repeat fixed center; height:100%;">
+
+        <!-- Track list -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 th:text="${'Song Recommendations For ' + user.displayName}"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <table id="track_table" class="table table-hover border border-dark table-dark">
+                        <thead>
+                            <tr>
+                                <th>Song</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="track : ${tracks}" th:attr="onclick=|loadTrack('${track.id}')|" >
+                                <td th:text="${track.name}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" th:href="@{__${#httpServletRequest.requestURI}__}" class="btn btn-success">Get New Recommendations</a>
+                </div>
+                <div id="song_info" class="col md-6">
+
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="trackLoader.js"></script>
+    </body>
+
+</html>
