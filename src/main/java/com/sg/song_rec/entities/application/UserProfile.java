@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 
 import java.util.Objects;
 
+/**
+ * A class representing information about a user
+ */
 public class UserProfile {
     @JsonAlias("display_name")
     private String displayName;

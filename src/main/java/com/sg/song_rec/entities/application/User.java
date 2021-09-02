@@ -4,27 +4,12 @@ import com.sg.song_rec.entities.authorization.OAuth2Token;
 
 import java.util.Objects;
 
-public class User {
-    private String id;
+/**
+ * A class representing a unique user
+ */
+public class User extends UniqueEntity {
+
     private OAuth2Token token;
-
-    /**
-     * Gets the id
-     *
-     * @return java.lang.String The id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * Sets the id
-     *
-     * @param id The id to set
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
 
     /**
      * Gets the token

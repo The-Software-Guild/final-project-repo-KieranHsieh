@@ -1,8 +1,6 @@
 package com.sg.song_rec.util.mappers;
 
-import com.fasterxml.jackson.databind.util.LRUMap;
 import com.sg.song_rec.util.reflection.ClassReflector;
-import com.sg.song_rec.util.reflection.ObjectMapperParseException;
 import com.sg.song_rec.util.reflection.ReflectionQueryBuilder;
 import com.sg.song_rec.util.reflection.ReflectionResult;
 
@@ -10,9 +8,20 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.regex.Pattern;
 
+/**
+ * A utility class used to map objects with
+ * fields annotated with UrlFormValue
+ */
 public class ObjectMapper {
+    /**
+     * Writes the provided object to a String, using UrlFormValue annotations to determine
+     * the key and value of the outputted string.
+     * The final format is in x/www-url-form-encoded
+     * @param o The object to map
+     * @return The object as a mapped String
+     * @throws ObjectMapperParseException thrown when the object could not be mapped
+     */
     public String writeValueToString(Object o) throws ObjectMapperParseException {
         // Reflect object and get it's form value fields
         ReflectionQueryBuilder<UrlFormValue> builder = new ReflectionQueryBuilder<UrlFormValue>()

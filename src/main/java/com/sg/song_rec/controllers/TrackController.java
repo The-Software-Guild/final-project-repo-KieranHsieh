@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.websocket.server.PathParam;
 
+/**
+ * The controller for the tracks endpoint
+ */
 @RestController
 @RequestMapping("tracks")
 public class TrackController {
@@ -20,12 +22,23 @@ public class TrackController {
     private TrackDao trackDao;
     private UserDao userDao;
 
+    /**
+     * Constructs a new TrackController object
+     * @param trackDao The DAO used to access track information
+     * @param userDao The DAO used to access users
+     */
     @Autowired
     public TrackController(TrackDao trackDao, UserDao userDao) {
         this.trackDao = trackDao;
         this.userDao = userDao;
     }
 
+    /**
+     * A pass-through method that retrieves track information
+     * @param request The request automatically passed to the method
+     * @param id The ID of the track to get information for
+     * @return The retrieved track if the ID and user were both valid, or null otherwise
+     */
     @GetMapping("{id}")
     public Track getTrack(HttpServletRequest request, @PathVariable String id) {
         User currentUser = userDao.getUserById(request.getSession().getId());

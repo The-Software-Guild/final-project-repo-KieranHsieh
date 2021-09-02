@@ -2,6 +2,10 @@ package com.sg.song_rec.entities.authorization;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * A class representing a response
+ * containing an Oauth2AccessToken
+ */
 public class OAuth2TokenResponse {
     private String accessToken;
     private static final String tokenType = "Bearer";

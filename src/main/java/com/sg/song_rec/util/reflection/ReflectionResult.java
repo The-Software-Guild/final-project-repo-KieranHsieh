@@ -3,6 +3,11 @@ package com.sg.song_rec.util.reflection;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 
+/**
+ * A data structure containing an annotated element and its associated annotation instance
+ * @param <T> The annotated element type
+ * @param <A> The annotation type
+ */
 public class ReflectionResult<T extends AnnotatedElement, A extends Annotation> {
     private T element;
     private A[] annotation;
@@ -10,6 +15,11 @@ public class ReflectionResult<T extends AnnotatedElement, A extends Annotation> 
     public ReflectionResult() {
     }
 
+    /**
+     * Constructs a new reflection result
+     * @param element The AnnotatedElement
+     * @param annotation The annotation instances
+     */
     public ReflectionResult(T element, A[] annotation) {
         this.element = element;
         this.annotation = annotation;

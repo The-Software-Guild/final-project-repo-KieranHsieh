@@ -3,6 +3,9 @@ package com.sg.song_rec.entities.authorization;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * A class representing an OAuth2 access token
+ */
 public class OAuth2Token {
     private String accessToken;
     private String refreshToken;

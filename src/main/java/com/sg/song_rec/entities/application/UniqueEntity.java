@@ -1,6 +1,13 @@
 package com.sg.song_rec.entities.application;
 
+/**
+ * An abstract class representing
+ * an entity defined by a unique String ID
+ */
 public abstract class UniqueEntity {
+    /**
+     * The ID of the entity
+     */
     private String id;
 
     /**

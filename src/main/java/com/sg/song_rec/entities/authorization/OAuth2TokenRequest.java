@@ -2,6 +2,9 @@ package com.sg.song_rec.entities.authorization;
 
 import com.sg.song_rec.util.mappers.UrlFormValue;
 
+/**
+ * A class representing a request for an OAuth2 access token
+ */
 public class OAuth2TokenRequest {
     @UrlFormValue("grant_type")
     private static final String grantType = "authorization_code";

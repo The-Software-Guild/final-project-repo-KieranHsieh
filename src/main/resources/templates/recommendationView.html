@@ -6,11 +6,11 @@
     </head>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <body class="text-white" style="background: url('resources/david-dvoracek-h8ElUo_473c-unsplash.jpg'); no-repeat fixed center; height:100%;">
+    <body class="text-white bg-dark bg-gradient" style="height:100%;">
 
         <!-- Track list -->
-        <div class="container">
-            <div class="row">
+        <div class="container shadow-lg pb-3" style="background-color: rgb(62, 68, 74);">
+            <div class="row mb-3">
                 <div class="col">
                     <h1 th:text="${'Song Recommendations For ' + user.displayName}"></h1>
                 </div>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <table id="track_table" class="table table-hover border border-dark table-dark">
-                        <thead>
+                        <thead style="background-color: rgb(24, 28, 34);">
                             <tr>
                                 <th>Song</th>
                             </tr>
@@ -31,8 +31,13 @@
                     </table>
                     <a href="#" th:href="@{__${#httpServletRequest.requestURI}__}" class="btn btn-success">Get New Recommendations</a>
                 </div>
-                <div id="song_info" class="col md-6">
+                <div class="col-md-6 pr-4">
+                    <div class="row border-bottom">
+                        <h1>Listen Here</h1>
+                    </div>
+                    <div id="song_info" class="row">
 
+                    </div>
                 </div>
             </div>
         </div>

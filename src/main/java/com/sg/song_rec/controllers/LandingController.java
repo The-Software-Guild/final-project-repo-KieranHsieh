@@ -1,16 +1,20 @@
 package com.sg.song_rec.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.http.HttpServletRequest;
-
+/**
+ * The controller for the landing page of the application
+ */
 @Controller
 public class LandingController {
 
+    /**
+     * Returns the landingPage Thymeleaf template
+     * @return The name of the landingPage Thymeleaf template
+     */
     @GetMapping
-    public String getLandingPage(Model model, HttpServletRequest request) {
+    public String getLandingPage() {
         return "landingPage";
     }
 

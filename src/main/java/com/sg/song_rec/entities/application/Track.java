@@ -1,10 +1,11 @@
 package com.sg.song_rec.entities.application;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * An entity representing a unique track
+ */
 public class Track extends UniqueEntity {
     private String name;
     private List<Artist> artists;

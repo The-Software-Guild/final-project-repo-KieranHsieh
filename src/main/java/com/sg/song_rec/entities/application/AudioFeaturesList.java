@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+/**
+ * A utility class used when de-serializing
+ * a JSON array of AudioFeatures objects
+ */
 public class AudioFeaturesList {
     @JsonProperty("audio_features")
     private List<AudioFeatures> audioFeatures;

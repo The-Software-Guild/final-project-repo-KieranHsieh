@@ -1,20 +1,15 @@
 package com.sg.song_rec.data.rest;
 
-import com.sg.song_rec.controllers.HttpRequestBuilder;
 import com.sg.song_rec.data.TrackDao;
-import com.sg.song_rec.entities.application.AudioFeatures;
 import com.sg.song_rec.entities.application.Track;
 import com.sg.song_rec.entities.application.TrackList;
 import com.sg.song_rec.entities.application.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Repository

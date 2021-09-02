@@ -1,11 +1,15 @@
 package com.sg.song_rec.entities.application;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * An entity representing a unique artist
+ */
 public class Artist extends UniqueEntity {
     private String name;
-    private List<String> genres;
+    private List<String> genres = new ArrayList<>();
 
     /**
      * Gets the name

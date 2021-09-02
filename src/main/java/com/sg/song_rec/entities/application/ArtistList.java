@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 
 import java.util.List;
 
+/**
+ * A utility class used when de-serializing
+ * an array of Artists in JSON format
+ */
 public class ArtistList {
     @JsonAlias("items")
     private List<Artist> artists;

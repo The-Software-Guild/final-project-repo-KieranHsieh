@@ -2,6 +2,10 @@ package com.sg.song_rec.entities.application;
 
 import java.util.Objects;
 
+/**
+ * An entity representing a set of audio features.
+ * For more information, see https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject
+ */
 public class AudioFeatures {
     private double danceability;
     private double energy;

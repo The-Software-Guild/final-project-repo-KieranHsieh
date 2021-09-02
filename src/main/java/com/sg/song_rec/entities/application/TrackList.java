@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 
 import java.util.List;
 
+/**
+ * A utility class used when de-serializing
+ * a JSON array of Track objects
+ */
 public class TrackList {
     @JsonAlias("items")
     private List<Track> tracks;
